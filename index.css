@@ -1,0 +1,258 @@
+*,
+*::before,
+*::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+/* colors in global variable we can access from any where */
+body
+{
+    width: 100vw;
+    height: 100vh;
+    background:linear-gradient(90deg, rgba(7, 213, 174, 1) 0%, rgba(33, 243, 227, 1) 50%, rgba(7, 213, 174, 1) 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container
+{
+    width: 90%;
+    max-width: 450px;
+}
+
+.pwd-head
+{
+    color: darkslateblue;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    opacity: 0.8;
+
+}
+
+.displaypwd
+{
+    position: relative;
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+    background-color: aqua;
+    border-radius: 1.3rem;
+    border-bottom: 0.35rem solid rgba(4, 204, 230, 1);
+}
+.display-data
+{
+    /* position: absolute; */
+    width: 100%;
+    outline: none;
+    padding: 1.15rem 1rem;
+    color: darkblue;
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    cursor:auto;
+
+}
+
+.display-data::placeholder{
+    color: lightblue;
+    position: absolute;
+    top: 50%;
+    font-size: 1.5rem;
+    opacity: 0.9;
+    transform: translateY(-50%);
+
+}
+
+.cpybtn
+{
+    position: absolute; 
+    top:50%;
+    right:1.5rem;
+    transform: translateY(-50%);
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.input-section
+{
+    width: 100%;
+    background-color: aqua;
+    border-radius: 1.3rem;
+    border-bottom: 0.35rem solid rgba(4, 204, 230, 1);
+    /* opacity: 0.9; */
+    padding: 2rem;
+
+}
+
+.password-length-section
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.password-length-p
+{
+    color: black;
+    opacity: 0.8;
+    font-size: 1.5rem;
+    font-weight: 600; 
+}
+
+.password-length-section p:nth-child(2)
+{
+    color: darkblue;
+    font-size: 1.5rem;
+    font-weight: 600; 
+}
+
+.strenght-sec
+{
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+#circle
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* box-shadow: 0 0 26px #CCC; */
+}
+
+.generate-button-sec{
+    background-color: rgb(111, 94, 221);
+    cursor: pointer;
+    width: 100%;
+    border-radius: 0.75rem;
+    border: none;
+    border-bottom: 0.35rem solid blue;
+    padding: 1rem 0;
+    color: blue;
+    font-size: 1.25rem;
+    font-weight: 600; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.check
+{
+    display: flex;
+    gap: 0 1rem;
+    align-items: center;
+    margin: 1rem 0;
+    color: black;
+    opacity: 0.8;
+    font-size: 1.3rem;
+    font-weight: 600; 
+}
+
+.check input
+{
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border: 1px solid rgb(46, 42, 42);
+    border-radius: 20%;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.check input:checked
+{
+    background-color: rgb(82, 197, 82);
+}
+
+.check input:checked::before
+{
+    position: absolute;
+    content: "✓";
+    color:black;
+    right: 18%;
+    top: -10%;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.slider
+{
+    appearance: none;
+    width: 100%;
+    background-color: rgba(7, 213, 174, 1);
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    margin: 1.8rem 0;
+    border: none;
+    transition: all ;
+    height: 0.9rem;
+    cursor: pointer;
+    z-index:-1;
+    background-image: linear-gradient(90deg, rgb(0, 119, 255) 0%, rgb(0, 145, 212) 50%, rgba(136, 130, 238, 1) 100%);;
+}
+
+.slider::-webkit-slider-thumb
+{
+    appearance: none;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(213, 243, 106);
+    border-radius: 50%;
+    transition: all 100ms ease-in;
+
+}
+
+.slider::-webkit-slider-thumb:hover
+{
+    background-color: rgb(26, 24, 24);
+    border: 2px solid yellow;
+    box-shadow: 0 0 20px yellow;
+}
+
+.slider:focus
+{
+    border:2px solid yellow;
+}
+
+.copiedmssg
+{
+    background-color: rgb(111, 94, 221);
+    position: absolute;
+    bottom: 110%;
+    right: -50%;
+    font-size: large;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 20% 30%;
+    color: yellow;
+    transform: scale(0);
+    transform-origin: bottom;;
+    transition: all 250ms ease-in-out;
+}
+
+.copiedmssg.active
+{
+    /* opacity: 1; */
+    transform: scale(1);
+}
+
+.button-last{
+    display: flex;
+    gap: 0 20px;
+}
